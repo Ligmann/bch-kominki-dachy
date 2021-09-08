@@ -1,0 +1,54 @@
+mixin footer-nafigation(header, ...items)
+	h3(class="footer-header")=header
+	ul(class="footer-navigation")
+		each item in items
+			li(class="footer-navigation__list")
+				a(href=item[0])= item[1]
+
+footer.master-footer.section-wrapper-AddColor
+	div.master-footer__botton
+		div.container
+			div.row
+				div.col-xl-3.col-lg-3.col-md-6.col-sm-12
+					a(href="#").logo-wrap
+						img(src="images/logo/bch.svg", alt="").logo-wrap__images
+					div.master-footer__botton-icon
+						a(href="#").master-footer__botton-icon__item
+						a(href="#").master-footer__botton-icon__item
+					a(href="http://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19940240083/U/D19940083Lj.pdf", rel="nofollow", target="_blank").footer-anchor
+						|2020 ©  Prawa Autroskie
+					a(href="https://ligmann.eu").footer-anchor
+						| Carried: Damian Ligmann
+				nav.col-xl-3.col-lg-3.col-md-6.col-sm-12
+					+footer-nafigation(
+						'MAPA STRONY',
+						['a', 'O nas'],
+						['a', 'Obsługa Firm'],
+						['a', 'Sprzedaż'],
+						['a', 'Dachy'],
+						['a', 'Wykończenia'],
+						['a', 'Murarstwo'],
+						['a', 'Blog'],
+						['a', 'Kontakt']
+					)
+				div.col-xl-3.col-lg-3.col-md-6.col-sm-12
+					+footer-nafigation(
+						'OFERTA',
+						['a', 'Sprzedaż'],
+						['a', 'Dachy'],
+						['a', 'Wykończenia'],
+						['a', 'Murarstwo']
+					)
+				div.col-xl-3.col-lg-3.col-md-6.col-sm-12
+					+footer-nafigation(
+						'KONTAKT',
+						['/kontakt', 'Godziny Otwarcia'],
+						['/kontakt', 'Poniedziałek - Piątek: 7:00 - 16:30'],
+						['/kontakt', 'Sobota: 8:00 - 13:00'],
+						['tel:+48 692 448 179', 'Tel: 692 448 179 | 602 388 321'],
+						['amailto:', 'E-mail:']
+					)
+	div(class="fb-customerchat" attribution=setup_tool page_id="483296748368950")
+
+script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
+script(src="js/main-bootom.js")

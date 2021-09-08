@@ -1,0 +1,105 @@
+-
+	//-	Title
+	let nameTitle = "BCH kominki dachy | kontakt";
+
+	//-	Baner top
+	let baner_top_img = "images/form/v1/images-contakt.webp"
+	let baner_top_h1 = "Kontakt";
+	let baner_top_h2 = "Lorem Ipsum is simply"
+	let baner_top_content = "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit."
+
+	//-	four-columnV1
+	let images_four_columnV1 = "images/icons/check/check-header.svg", alt_four_columnV1 = "alt",header_four_columnV1 = "Lorem Ipsum dolar", text_four_columnV1= "Lorem ipsum, dolor sit amet consectetur adipisicing elit. In placeat quidem cumque quis nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit.";
+	let images2_four_columnV1 = "images/icons/check/check-header.svg", alt2_four_columnV1 = "alt",header2_four_columnV1 = "Lorem Ipsum dolar", text2_four_columnV1= "Lorem ipsum, dolor sit amet consectetur adipisicing elit. In placeat quidem cumque quis nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit.";
+	let images3_four_columnV1 = "images/icons/check/check-header.svg", alt3_four_columnV1 = "alt",header3_four_columnV1 = "Lorem Ipsum dolar", text3_four_columnV1= "Lorem ipsum, dolor sit amet consectetur adipisicing elit. In placeat quidem cumque quis nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit.";
+	let images4_four_columnV1 = "images/icons/check/check-header.svg", alt4_four_columnV1 = "alt",header4_four_columnV1 = "Lorem Ipsum dolar", text4_four_columnV1= "Lorem ipsum, dolor sit amet consectetur adipisicing elit. In placeat quidem cumque quis nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit.";
+
+	//-	footer
+	let alternative_footer = "DOWIEDŹ SIĘ WIĘCEJ";
+	let header_footer = "Lorem ipsum dolor sit amet";
+	let text_footer = "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit.";
+	let buttonName_footer = "Lorem ipsum";
+
+include ../common-components/_head
+
+mixin headquarters-toogle(data = [])
+	//- ul(class="nav" id="myTab" role='tablist')
+	//- 	each item, index in data
+	//- 		li(class="nav-item" role="presentation")
+	//- 			a(class="headquarters__button nav-item" class=index==0?'active':'' id=item.id+'-tab' data-bs-toggle='tab' href='#'+item.id role='tab' aria-controls=item.id aria-selected=index==0?'true':'false')=item.city
+	div(class="headquarters__wrap tab-content" id="myTabContent")
+		each item, index in data
+			div(class="tab-pane" class=index==0?'active fade show':'' id=item.id role="tabpanel" aria-labelledby=item.id+'-tab')
+				div(class="row")
+					div(class="col-lg-7 headquarters__images-wrap")
+						div(class="headquarters__images")
+							img(src=item.mapImage alt="" class="headquarters__images-items")
+					div(class="col-lg-5")
+						div(class="headquarters__box-content")
+							h3 BCH Kominki Dachy
+								span(class="headquarters__color-header")=item.city
+							address(class="headquarters__address")
+								b Siedziba firmy
+								span=item.street
+								span=item.postCode
+							span(class="headquarters__contact-details")
+								b Dane do korespondencji
+								a(href=item.phoneURL)=item.phone
+								a(href=item.phoneURLTwo)=item.phoneTwo
+								a(href=item.emailURL)=item.email
+							span(class="headquarters__opening-hours")
+								b Godziny otwarcia <br />
+								=item.openingHours
+								<br />
+								=item.openingHoursTwo
+							a(href=item.locationURL class="primary-button headquarters__button-maps")
+									| Sprawdź dojazd
+									span(class="button-arrow-right")
+
+body
+	main(type="main")
+		include ../common-components/_nav
+		include ../common-components/_baner-top
+		section.section-wrapper-AddColor
+			div.container
+				div.headquarters
+					h2 Dane kontaktowe
+					+headquarters-toogle(
+						[
+							{
+								id: 'Osówiec',
+								mapImage: 'images/maps/maps.webp',
+								city: 'Osówiec',
+								street: 'ul. Szosa Bydgoska 6',
+								postCode: '86-014 | Osówiec',
+								phoneURL: 'tel:48692448179',
+								phone: '+48 692 448 179',
+								phoneURLTwo: '#',
+								phoneTwo: '+48 602 388 321',
+								emailURL: 'mailto:gg@wp.pl',
+								email: 'e-mail',
+								openingHours: 'poniedziałek-piątek: 7:00 - 16:30 ',
+								openingHoursTwo: 'sobota: 8:00 - 13:00 ',
+								locationURL: 'https://www.google.com/maps/dir//BCH+-+kominki,+dachy,+us%C5%82ugi+i+materia%C5%82y+budowlane+w+Bydgoszczy,+Szosa+Bydgoska,+Os%C3%B3wiec/@53.167984,17.8224325,20757m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x47030dd88df23763:0xc3770cd160125c72!2m2!1d17.8924719!2d53.1679016!3e0!5m1!1e4?hl=PL',
+							},
+						]
+					)
+
+		section.contakt-two.section-wrapper-AddColor
+			div.container
+				div.row
+					div.col-lg-5
+						form(action="").contakt-two__wrap
+							h2 Formularza kontaktowy
+							input(type="text" placeholder="Imię").contakt-two__input
+							input(type="text" placeholder="Nazwisko").contakt-two__input
+							input(type="text" placeholder="Firma").contakt-two__input
+							input(type="text" placeholder="Numer telefonu").contakt-two__input
+							input(type="text" placeholder="Adres mail").contakt-two__input
+							textarea(name="elo" cols="30" rows="10" placeholder="Wiadomości").contakt-two__texttarea
+							input(type="submit" valu="Wyślij Wiadomości").primary-button.contakt-two__button
+					div.col-lg-7
+						img(src="images/text-elements/home-bacground.webp" alt="").contakt-two__images
+		include ../components/text-elements/_four-columnV1
+		include ../common-components/_footer-top
+		include ../common-components/_footer

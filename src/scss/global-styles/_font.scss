@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap');
+// HEADER
+h1 {
+    @include text-header($h1: true);
+}
+
+h2 {
+    @include text-header($h2: true);
+}
+
+h3 {
+    @include text-header($h3: true);
+}
+
+h4 {
+    @include text-header($h4: true);
+}
+
+.header-text {
+    &_underline {
+        display: block;
+        color: $primary-color;
+    }
+}
+
+//	PARAGRAF
+.paragraph-text {
+    @include text-paragraph;
+}
+
+.paragraph-text-bold {
+    @include text-paragraph($bold-text: true);
+}
+
+.paragraph-text-addColor {
+    @include text-paragraph($add-color: true);
+}
+
+.paragraph-text-addColor-bold {
+    @include text-paragraph($bold-text: true, $add-color: true);
+}
+
+.paragraf-margin {
+    @include text-paragraph($margin: true);
+}
+
+//	SAMLL TEXT
+.small-text {
+    @include text-paragraph($small: true, $bold-text: true);
+}
+
+.small-text-addColor {
+    @include text-paragraph($small: true, $bold-text: true, $add-color: true);
+}

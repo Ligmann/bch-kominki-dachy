@@ -1,0 +1,109 @@
+.headquarters {
+    &__wrap {
+        // padding-top: 8px;
+    }
+    &__button {
+        margin-right: 16px;
+        display: block;
+        height: 24px;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            left: 0;
+            bottom: 0;
+            margin-top: 16px;
+            background-color: $primary-color;
+            border-radius: $radius;
+            opacity: 0;
+            transition: $animation opacity;
+            border-radius: $radius;
+        }
+        &:hover {
+            &::before {
+                opacity: 1;
+                background-color: rgba($color: $primary-color, $alpha: .6);
+            }
+        }
+        @media (max-width: 370px) {
+            margin: 0 0 16px;
+            width: 50%
+        }
+    }
+    .nav {
+        margin: 16px 0;
+        @media (max-width: 370px) {
+            flex-flow: column;
+        }
+        .nav-item {
+            width: max-content;
+        }
+    }
+    .active {
+        &::before {
+            content: "";
+            opacity: 1;
+        }
+    }
+    &__images {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            border-radius: $radius;
+            background-color: rgba(0, 0, 0, 0.18);
+        }
+        @media (max-width: 991px) {
+            margin-bottom: 16px;
+        }
+        @media (max-width: 991px) {
+            height: 330px;
+        }
+    }
+    &__images-items {
+        // transform: scale(2);
+        height: 100%;
+    }
+    &__box-content {
+        background-color: $white;
+        border-radius: $radius;
+        padding: 64px;
+        height: 100%;
+        @media (max-width: 370px) {
+            padding: 30px;
+        }
+    }
+    &__color-header {
+        display: block;
+        color: $primary-color;
+    }
+    &__address {
+        display: flex;
+        flex-flow: column;
+        padding-top: 32px;
+    }
+    &__contact-details {
+        display: flex;
+        flex-flow: column;
+        padding-top: 32px;
+    }
+    &__opening-hours {
+        display: block;
+        padding-top: 40px;
+    }
+    &__button-maps {
+        margin-top: 64px;
+    }
+}

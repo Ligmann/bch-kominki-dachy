@@ -1,0 +1,53 @@
+// - MIXIN ADD ELEMENTS SLIDER 
+mixin informations-slider-elements(className, images, alt, header, text, slimText)
+	div(class="carousel-item" class=className)
+		div.row
+			div.col-xl-7.col-lg-6.col-md-12
+				div.informations-slider__images
+					img(src=images, alt=alt)
+			div.col-xl-5.col-lg-6.col-md-12
+				div.informations-slider__text
+					h3(class="header-text_underline")=header
+					p(class="paragraph-text")=text
+					div(class="small-text-addColor")=slimText
+
+div.informations-twoColumn
+	div.container
+		div.box-centered
+			div.col-xl-6.col-lg-6
+				div.box-centered__text
+					h2 #{h2_informations_slider_elements}
+					p.paragraph-text-bold #{text_informations_slider_elements}
+		div#carouselExampleControls.carousel.slide(data-bs-ride='carousel')
+			div.informations-slider
+				div.carousel-inner
+					+informations-slider-elements(
+						'active',
+						sliImages_informations_slider_elements,
+						sliAlt_informations_slider_elements,
+						sliHeader_informations_slider_elements,
+						sliText_informations_slider_elements,
+						sliAlternative_informations_slider_elements
+						)
+					+informations-slider-elements(
+						'',
+						sliImagesTwo_informations_slider_elements,
+						sliAltTwo_informations_slider_elements,
+						sliHeaderTwo_informations_slider_elements,
+						sliTextTwo_informations_slider_elements,
+						sliAlternativeTwo_informations_slider_elements
+						)
+					+informations-slider-elements(
+						'',
+						sliImagesThree_informations_slider_elements,
+						sliAltThree_informations_slider_elements,
+						sliHeaderThree_informations_slider_elements,
+						sliTextThree_informations_slider_elements,
+						sliAlternativeThree_informations_slider_elements
+						)
+			a.carousel-control-prev.informations-slider__button(href='#carouselExampleControls' role='button' data-bs-slide='prev')
+				span.carousel-control-prev-icon(aria-hidden='true')
+				span.visually-hidden Previous
+			a.carousel-control-next.informations-slider__button(href='#carouselExampleControls' role='button' data-bs-slide='next')
+				span.carousel-control-next-icon(aria-hidden='true')
+				span.visually-hidden Next

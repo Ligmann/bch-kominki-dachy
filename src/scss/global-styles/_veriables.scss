@@ -1,0 +1,32 @@
+//	COLOR
+$black: #0F0F0F;
+$white: #fff;
+$green: #eaeefd;
+$gray-light:#f1f4f8;
+//	COLORS PRIMARY
+$primary-color: #ff8533;
+$primary-color-two: #f8b78c;
+//	SECUNDARY
+$secunadry-color:#869ab8;
+$secundary-color-two: #506690;
+//	BACKGROUND COLORS
+$background-two: #f7f7f7;
+$background-gradient: linear-gradient(to bottom, #f9fbfd 0, #fff 100%);
+//	FONT
+$family-primary: 'Lato',
+sans-serif;
+$family-secundary: 'Source Sans Pro',
+sans-serif;
+//	ANIMATION TRANLATE
+$animation: .3s linear;
+//	BOX SHADOW
+$shadow: 0px -3px 16px 0px #b3b2b2;
+//	PARAMETRS ATRYBUTS
+$additional-container-liner: 56px;
+$global-distance: 112px;
+$global-distance-rwd: 48px;
+$radius: 8px;
+//	BORDER
+$boder-styles: 1px solid $gray-light;
+//	RWD LOOP
+$sizes: ( "xs": 1px, "sm": 557px, "md": 768px, "lg": 992px, );
