@@ -9,35 +9,37 @@
 
 	//-	contakt-one
 	let images_contakt_one = "images/form/v1/images-contakt.webp", images_contakt_alt = "alt";
-	let h2_contakt_one = "Lorem ipsum, dolor sit ", h2_color_contakt_one = "Lorem ipsum Necessitatibus.";
+	let h2_contakt_one = "Lorem ipsum, dolor sit ", h2_color_contakt_one = "Lorem ipsum Necessitatibus1.";
 	let text_contakt_one = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus voluptatem nulla, voluptates, cumque exercitationem recusandae distinctio, quo nobis optio deserunt alias doloribus consectetur magni quam. Veritatis illum eligendi porro incidunt?";
 	let textIcon_contakt_one = "Lorem ipsum dolor", textIconOne_contakt_one = "Lorem ipsum dolor",  textIconThree_contakt_one = "Lorem ipsum dolor", textIconFour_contakt_one = "Lorem ipsum dolor";
 
 	//-	informations-slider
 	let h2_informations_slider_elements = "Lorem ipsum dolor sit amet";
 	let text_informations_slider_elements = "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit.";
-	let sliImages_informations_slider_elements = "images/slider/text-and-background/spotkanie.webp", sliAlt_informations_slider_elements = "alt", sliHeader_informations_slider_elements = "Lorem ipsum dolor sit amet", sliText_informations_slider_elements = "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit.",sliAlternative_informations_slider_elements="elit elit consectetur adipisicing elit.";
-	let sliImagesTwo_informations_slider_elements = "images/slider/text-and-background/spotkanie-dwa.webp", sliAltTwo_informations_slider_elements = "alt", sliHeaderTwo_informations_slider_elements = "Lorem ipsum dolor sit amet", sliTextTwo_informations_slider_elements = "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit.",sliAlternativeTwo_informations_slider_elements="elit elit consectetur adipisicing elit.";
-	let sliImagesThree_informations_slider_elements = "images/slider/text-and-background/meetap.webp", sliAltThree_informations_slider_elements = "alt", sliHeaderThree_informations_slider_elements = "Lorem ipsum dolor sit amet", sliTextThree_informations_slider_elements = "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit.",sliAlternativeThree_informations_slider_elements="elit elit consectetur adipisicing elit.";
+	let sliImages_informations_slider_elements = "images/slider/text-and-background/spotkanie.webp", sliAlt_informations_slider_elements = "alt", sliHeader_informations_slider_elements = "1", sliText_informations_slider_elements = "ponad dwudziestoletnie doświadczenie w branży budowlanej pozwala nam świadczyć kompleksowe usługi w wielu dziedzinach",sliAlternative_informations_slider_elements="elit elit consectetur adipisicing elit.";
+	let sliImagesTwo_informations_slider_elements = "images/slider/text-and-background/spotkanie-dwa.webp", sliAltTwo_informations_slider_elements = "alt", sliHeaderTwo_informations_slider_elements = "2", sliTextTwo_informations_slider_elements = "zawsze staramy się znaleźć najbardziej odpowiednie rozwiązanie i w atmosferze życzliwości sprostać oczekiwaniom Klientów",sliAlternativeTwo_informations_slider_elements="elit elit consectetur adipisicing elit.";
+	let sliImagesThree_informations_slider_elements = "images/slider/text-and-background/meetap.webp", sliAltThree_informations_slider_elements = "alt", sliHeaderThree_informations_slider_elements = "3", sliTextThree_informations_slider_elements = "teskt",sliAlternativeThree_informations_slider_elements="elit elit consectetur adipisicing elit.";
 
 	//-	two-columnV1
-	let h2_two_columnV1 = "Lorem ipsum, dolor sit ", h2_color_two_columnV1 = "Lorem ipsum Necessitatibus.";
-	let text_two_columnV1 = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error fugiat suscipit a dignissimos adipisci ad molestias minima provident fuga iste ut cumque harum temporibus";
-	let Icon_images_two_columnV1= "images/icons/text-elements/coordinator.svg", Icon_alt_two_columnV1="alt", Icon_h3_two_columnV1="Lorem ipsum, dolor sit", Icon_text_two_columnV1="Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.";
-	let Icon_imagesTwo_two_columnV1= "images/icons/text-elements/student.svg", Icon_altTwo_two_columnV1="alt", Icon_h3Two_two_columnV1="Lorem ipsum, dolor sit", Icon_textTwo_two_columnV1="Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.";
+	let h2_two_columnV1 = "Przy planowaniu prac budowlanych lub wykończeniowych warto skorzystać ", h2_color_two_columnV1 = "z naszej oferty przynajmniej z dwóch powodów:";
+	let text_two_columnV1 = "Podchodzimy do zadania kompleksowo - od wyboru odpowiednich materiałów dociepleniowych po poratowanie brakującą śrubką.";
+	let Icon_images_two_columnV1= "images/icons/text-elements/coordinator.svg", Icon_alt_two_columnV1="alt", Icon_h3_two_columnV1="Profesjonalne doradztwo", Icon_text_two_columnV1="Gwarantujemy profesjonalne doradztwo na każdym etapie planowania i realizacji prac oraz oferujemy dopasowane do potrzeb usługi";
+	let Icon_imagesTwo_two_columnV1= "images/icons/text-elements/student.svg", Icon_altTwo_two_columnV1="alt", Icon_h3Two_two_columnV1="Wysoka jakość produktów", Icon_textTwo_two_columnV1="mamy zaplecze dobrych, sprawdzonych przez wielu Klientów materiałów budowlanych i okołobudowlanych ";
 	let images_two_columnV1="images/text-elements/home-bacground.webp", alt_two_columnV1 = "alt";
 
 include ../common-components/_head
 
-mixin box-centered(text, icon, color_class)
-	div(class=color_class class="card")
+mixin box-centered(heading, icon, ...items)
+	div( class="card")
 		div.card__header.mb-2
 			div.card__box-icon
 				span.card__icon.global-icon
 					img(src=icon alt="elo")
-			h3.card__title Lorem ipsum dolor sit amet consectetur.
+			h3.card__title=heading
 		div.card__content
-			p.paragraph-text-bold= text
+			ul
+				each item in items
+					li.paragraph-text-bold= item
 
 body
 	main(type="main")
@@ -49,10 +51,10 @@ body
 				div.row.mt-7
 					div.col-lg-5.box-text__content-box--flex-center-vertical.pl-4
 						div
-							h3.mb-2 Key benefits of Space template
-							p.paragraph-text-bold.mb-1 The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.
-							p.paragraph-text.mb-1 Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion.
-							p.paragraph-text Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion.
+							h3.mb-2 Bracia Chmielewicz 
+							p.paragraph-text-bold.mb-1 Jesteśmy rodzinną firmą założoną przez dwóch braci - Wojtka i Adama. Każdy z nas zaczynał od swojej specjalności Wojtek - usług dekarskich, a Adam w dziedzinie kominków. 
+							p.paragraph-text.mb-1 Z czasem zrodził się pomysł, aby wspólnie utworzyć małe centrum budowlane, w którym będziemy promować polskich producentów i stawiać na dobre jakościowo materiały.
+							p.paragraph-text Przez lata profil naszej działności rozszerzył się o prace wykończeniowe, małe prace budowlane, a w ostatnim czasie nawet instalatorskie. Zatrudniamy fachowców w swoich dziedzinach i dzięki temu możemy świadczyć najwyższej jakości usługi, wspierając się  ponad dwudziestoletnim doświadczeniem w branży budowlanej i korzystając z dobrych, sprawdzonych materiałów. 
 					div.col-lg-6.offset-md-1
 						div.box-text__container-image
 							img(src="images/heepy-team.jpg" alt="" class="box-text__item-image")
@@ -61,22 +63,23 @@ body
 			div.container
 				div.box-centered
 					div.col-md-6.box-centered__text
-						span.rounded-box--white.small-text-addColor.mb-2 dolar siolux
-						h2 Lorem ipsum dolor
-						p.paragraph-text-bold Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit elit consectetur adipisicing elit.
+						span.rounded-box--white.small-text-addColor.mb-2 Wysoka jakość
+						h2 Hurtownia materiałów budowlanych 
+						p.paragraph-text-bold Każde przedsięwzięcie budowlane wymaga odpowiednich narzędzi i materiałów. Niezależnie od tego czy planujesz przekopać ogródek, przemalowac pokój dziecka czy 'zabudowac' taras w naszej hurtowni materiałów budowlanych znajdziesz wszystko, czego potrzebujesz! <br> Współpracujemy z takimi producentami jak:
+
 				div.row.mt-6
 					div.col-lg-4.mb-3
-						+box-centered("You don't only need a theme, but also great tools in order to ease the process or building and customizing. And this is exactly what we offer you. Lorem ipsum dolor sit amet consectetur adipisicing elit", "images/icons/text-elements/student.svg")
+						+box-centered("materiały ogólnobudowlane", "images/icons/text-elements/student.svg", "gazobeton", "cegła", "płyty OSB i gips karton", "kleje", "cement", "posadzkę")
 					div.col-lg-4.mb-3
-						+box-centered("You don't only need a theme, but also great tools in order to ease the process or building and customizing. And this is exactly what we offer you. Lorem ipsum dolor sit amet consectetur adipisicing elit", "images/icons/text-elements/student.svg")
+						+box-centered("systemy dociepleń", "images/icons/text-elements/student.svg", "styropian", "wełna siatka", "kleje", "grunt baranek")
 					div.col-lg-4.mb-3
-						+box-centered("You don't only need a theme, but also great tools in order to ease the process or building and customizing. And this is exactly what we offer you. Lorem ipsum dolor sit amet consectetur adipisicing elit", "images/icons/text-elements/student.svg")
-					div.col-lg-4.mb-md-3.mb-sm-3.mb-xs-3
-						+box-centered("You don't only need a theme, but also great tools in order to ease the process or building and customizing. And this is exactly what we offer you. Lorem ipsum dolor sit amet consectetur adipisicing elit", "images/icons/text-elements/student.svg")
-					div.col-lg-4.mb-md-3.mb-sm-3.mb-xs-3
-						+box-centered("You don't only need a theme, but also great tools in order to ease the process or building and customizing. And this is exactly what we offer you. Lorem ipsum dolor sit amet consectetur adipisicing elit", "images/icons/text-elements/student.svg")
-					div.col-lg-4.mb-md-3.mb-sm-3.mb-xs-3
-						+box-centered("You don't only need a theme, but also great tools in order to ease the process or building and customizing. And this is exactly what we offer you. Lorem ipsum dolor sit amet consectetur adipisicing elit", "images/icons/text-elements/student.svg")
+						+box-centered("systemy rynnowe", "images/icons/text-elements/student.svg", "ocynkowane", "metalowe", "aluminiowe", "tytan-cynk", "PCV")
+					div.col-lg-4.mb-3
+						+box-centered("farby", "images/icons/text-elements/student.svg", "emulsje wewnętrzne", "farby akrylowe", "silikonowe wewnętrzne oraz  zewnętrzne")
+					div.col-lg-4.mb-3
+						+box-centered("atykuły metalowe ", "images/icons/text-elements/student.svg", "Śruby i wkręty, gwoźdźie", "wkręty cieisielskie", "szpilki i wkręty nierdzewne", "nity", "kątowniki")
+					div.col-lg-4.mb-3
+						+box-centered("Wysposarzenie", "images/icons/text-elements/student.svg", "podręczne narzędzia budowlane", "odzież robocza BHP", "narzędzia ogrodnicze")
 			div.section-wrapper-AddColor
 		section.section-wrapper
 			div.container
